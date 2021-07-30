@@ -22,7 +22,13 @@
   justify-content: center;
   min-height: calc(100vh - 152px);
 }
-
+.timer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 25px;
+}
 .board-container {
   display: flex;
   flex-direction: column;
@@ -93,6 +99,13 @@
   width: 20%;
 }
 .submit-button {
+  height: 100px;
+  width: 100px;
+  background-color: rgb(0, 255, 106);
+  border-radius: 100px;
+  margin-left: -20px;
+}
+.reset-button {
   height: 100px;
   width: 100px;
   background-color: red;

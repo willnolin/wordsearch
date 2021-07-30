@@ -8,7 +8,9 @@ export default function WordForm(props) {
     activeSquares,
     setActiveSquares,
     isBoardActive,
-    setIsBoardActive } = props;
+    setIsBoardActive,
+    setScore,
+  handleClear } = props;
   
   const currentWordStr = currentWord.join('')
   const words = require('an-array-of-english-words')
@@ -26,7 +28,8 @@ export default function WordForm(props) {
     const exists = checkIfValid(currentWordStr)
     if (exists) {
       setWordList([...wordList, currentWordStr])
-      handleClear(); 
+      handleClear();
+      handleScore();
       console.log('The word exists')
     }
     else {
@@ -34,19 +37,30 @@ export default function WordForm(props) {
       console.log('The word aint here')
     }
   }
-  const handleClear = () => {
-    // clear current word state
-    setCurrentWord([])
-   // for each active square, change bg property to white, set global Active Board toggle (triggers useEffect in Square)
-    activeSquares.forEach(square => {
-      const obj = { bg: 'white' }
-      const newObj = Object.assign(square, obj)
-      square = { ...newObj }
 
-    })
-    setIsBoardActive(prevState => !prevState)
-    setActiveSquares([])
+  const handleScore = () => {
+    let points = 0;
+    if (currentWordStr.length < 6) {
+      points = currentWordStr.length
+    } else {
+      points = currentWordStr.length + 3
+    }
+    setScore(prevState => prevState + points)
   }
+
+  // const handleClear = () => {
+  //   // clear current word state
+  //   setCurrentWord([])
+  //  // for each active square, change bg property to white, set global Active Board toggle (triggers useEffect in Square)
+  //   activeSquares.forEach(square => {
+  //     const obj = { bg: 'white' }
+  //     const newObj = Object.assign(square, obj)
+  //     square = { ...newObj }
+
+  //   })
+  //   setIsBoardActive(prevState => !prevState)
+  //   setActiveSquares([])
+  // }
 
   return (
     <div className="word-form">

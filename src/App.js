@@ -1,9 +1,9 @@
 import './App.css';
-import Board from './components/Board';
+import Board from './components/board_components/Board';
 
-import Display from './components/Display';
+import Display from './components/display_components/Display';
 import { useState } from 'react'
-import Layout from './components/Layout';
+import Layout from './components/layout_components/Layout';
 
 
 function App() {
