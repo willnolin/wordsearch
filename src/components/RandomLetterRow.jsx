@@ -4,7 +4,8 @@ import Square from './Square';
 export default function RandomLetterRow(props) {
   const [randomLetterRow, setRandomLetterRow] = useState([]);
 
-  const { handleClick, row } = props;
+  const { handleClick, row, isBoardActive,
+  setIsBoardActive} = props;
   const rows = 9;
 
   // generates a random letter
@@ -13,9 +14,8 @@ export default function RandomLetterRow(props) {
     return letters[Math.floor(Math.random() * letters.length)]
   }
 
-  //generate random letter row
+  //generate random letter row when component renders
   useEffect(() => {
-
     const generateLetterRow = (rowLength) => {
       const rowArray = [];
       let i = 0
@@ -23,7 +23,8 @@ export default function RandomLetterRow(props) {
         rowArray.push({
           value: generateRandomLetter(),
           x: i,
-          y: row
+          y: row,
+          bg: 'white'
         })
         i += 1;
       }
@@ -39,7 +40,9 @@ export default function RandomLetterRow(props) {
           <Square
             letter={letter}
             index={index}
-            handleClick={handleClick} />
+            handleClick={handleClick}
+            isBoardActive={isBoardActive}
+            setIsBoardActive={setIsBoardActive}/>
         ))}
       </div>
     </div>

@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import RandomLetterRow from './RandomLetterRow'
 
 export default function Board(props) {
 
-  const { currentWord, setCurrentWord, activeSquares, setActiveSquares } = props;
+  const { currentWord, setCurrentWord, activeSquares, setActiveSquares, isBoardActive,
+  setIsBoardActive} = props;
 
+  
   const handleClick = (letter, setIsActive) => {
+    // setIsBoardActive(true);
 
     if (currentWord.length) {
       if (activeSquares.find((obj, index) => (
@@ -32,6 +35,7 @@ export default function Board(props) {
       }
 
     } else {
+      // setIsBoardActive(true);
       setActiveSquares([letter])
       setCurrentWord([letter.value])
       setIsActive(true)
@@ -44,15 +48,24 @@ export default function Board(props) {
   return (
     <div>
       <div className="board">
-        <RandomLetterRow handleClick={handleClick} row={0} />
-        <RandomLetterRow handleClick={handleClick} row={1} />
-        <RandomLetterRow handleClick={handleClick} row={2} />
-        <RandomLetterRow handleClick={handleClick} row={3} />
-        <RandomLetterRow handleClick={handleClick} row={4} />
-        <RandomLetterRow handleClick={handleClick} row={5} />
-        <RandomLetterRow handleClick={handleClick} row={6} />
-        <RandomLetterRow handleClick={handleClick} row={7} />
-        <RandomLetterRow handleClick={handleClick} row={8} />
+        <RandomLetterRow handleClick={handleClick} row={0} isBoardActive={isBoardActive}
+            setIsBoardActive={setIsBoardActive}/>
+        <RandomLetterRow handleClick={handleClick} row={1} isBoardActive={isBoardActive}
+            setIsBoardActive={setIsBoardActive}/>
+        <RandomLetterRow handleClick={handleClick} row={2} isBoardActive={isBoardActive}
+            setIsBoardActive={setIsBoardActive}/>
+        <RandomLetterRow handleClick={handleClick} row={3} isBoardActive={isBoardActive}
+            setIsBoardActive={setIsBoardActive}/>
+        <RandomLetterRow handleClick={handleClick} row={4} isBoardActive={isBoardActive}
+            setIsBoardActive={setIsBoardActive}/>
+        <RandomLetterRow handleClick={handleClick} row={5} isBoardActive={isBoardActive}
+            setIsBoardActive={setIsBoardActive}/>
+        <RandomLetterRow handleClick={handleClick} row={6} isBoardActive={isBoardActive}
+            setIsBoardActive={setIsBoardActive}/>
+        <RandomLetterRow handleClick={handleClick} row={7} isBoardActive={isBoardActive}
+            setIsBoardActive={setIsBoardActive}/>
+        <RandomLetterRow handleClick={handleClick} row={8} isBoardActive={isBoardActive}
+            setIsBoardActive={setIsBoardActive}/>
       </div>
     </div>
   )

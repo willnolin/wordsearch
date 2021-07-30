@@ -1,13 +1,20 @@
 import React, { useState } from 'react'
 
 export default function WordForm(props) {
-  const { currentWord, setCurrentWord, wordList, setWordList, activeSquares, setActiveSquares } = props;
+  const { currentWord,
+    setCurrentWord,
+    wordList,
+    setWordList,
+    activeSquares,
+    setActiveSquares,
+    isBoardActive,
+    setIsBoardActive } = props;
+  
   const currentWordStr = currentWord.join('')
   const words = require('an-array-of-english-words')
 
   const checkIfValid = (word) => {
     const w = word.toLowerCase()
-    console.log(words.filter(d => d === w))
     if (words.filter(d => d === w).length)
       return true
     else
@@ -19,7 +26,7 @@ export default function WordForm(props) {
     const exists = checkIfValid(currentWordStr)
     if (exists) {
       setWordList([...wordList, currentWordStr])
-      handleClear();
+      handleClear(); 
       console.log('The word exists')
     }
     else {
@@ -28,18 +35,24 @@ export default function WordForm(props) {
     }
   }
   const handleClear = () => {
+    // clear current word state
     setCurrentWord([])
-    activeSquares.map(square => {
-      square.bg = 'white'
+   // for each active square, change bg property to white, set global Active Board toggle (triggers useEffect in Square)
+    activeSquares.forEach(square => {
+      const obj = { bg: 'white' }
+      const newObj = Object.assign(square, obj)
+      square = { ...newObj }
+
     })
+    setIsBoardActive(prevState => !prevState)
     setActiveSquares([])
   }
 
   return (
     <div className="word-form">
-      <form onSubmit={(e) => handleGuess(e)}>
-        <input type="text" id="word" value={currentWordStr} readOnly />
-        <button type="submit">Submit</button>
+      <form onSubmit={(e) => handleGuess(e)} id="word-form">
+        {/* <button type="submit">Submit</button> */}
+        <input className="textbox" type="text" id="word" value={currentWordStr} readOnly />
       </form>
     </div>
   )

@@ -11,7 +11,7 @@ function App() {
   const [currentWord, setCurrentWord] = useState([]);
   const [wordList, setWordList] = useState([]);
   const [activeSquares, setActiveSquares] = useState([]);
-  const [isActive, setIsActive] = useState(false);
+  const [isBoardActive, setIsBoardActive] = useState(false);
   return (
     <div className="App">
       <Layout>
@@ -21,8 +21,8 @@ function App() {
             setCurrentWord={setCurrentWord}
             activeSquares={activeSquares}
             setActiveSquares={setActiveSquares}
-            isActive={isActive}
-            setIsActive={setIsActive}
+            isBoardActive={isBoardActive}
+            setIsBoardActive={setIsBoardActive}
           />
         </div>
         <div className="game-details-container">
@@ -33,8 +33,8 @@ function App() {
             setWordList={setWordList}
             activeSquares={activeSquares}
             setActiveSquares={setActiveSquares}
-            isActive={isActive}
-            setIsActive={setIsActive}
+            isBoardActive={isBoardActive}
+            setIsBoardActive={setIsBoardActive}
           />
         </div>
       </Layout>
