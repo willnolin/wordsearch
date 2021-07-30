@@ -33,7 +33,8 @@ export default function Square(props) {
     <div className="square" key={index}
       style={{ backgroundColor: color }}
       onClick={() => handleSquare()}>
-      <p className="letter">{`${letter.x}, ${letter.y}`}</p>
+      <p className="letter">{`${letter.value}`}</p>
+      {/* <p className="letter">{`${letter.x}, ${letter.y}`}</p> */}
     </div>
   )
 }

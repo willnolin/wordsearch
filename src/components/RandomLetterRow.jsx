@@ -39,7 +39,6 @@ export default function RandomLetterRow(props) {
           <Square
             letter={letter}
             index={index}
-            // row={row}
             handleClick={handleClick} />
         ))}
       </div>
