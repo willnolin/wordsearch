@@ -1,6 +1,8 @@
 .App {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
   box-sizing: border-box;
 }
@@ -9,12 +11,16 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  background-color: bisque;
+  width: 100vw;
+  height: 100px;
 }
 
 .layout-children {
   display: flex;
   flex-direction: row;
-  min-height: calc(100vh - 104px);
+  justify-content: center;
+  min-height: calc(100vh - 152px);
 }
 
 .board-container {
@@ -68,7 +74,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin: 100px auto;
+  margin: 100px 10px;
   width: 40vw;
   height: 800px;
 }
@@ -119,13 +125,18 @@
 }
 
 .display-words {
+  display: flex;
+  flex-flow: column wrap;
   height: 40%;
-  width: 80%;
+  width: 90%;
   border: 1px solid black;
   font-size: 25px;
   margin-top: -50px;
-  padding: 50px;
+  padding: 20px;
   /* margin-right: 150px; */
+}
+.word {
+  margin: 2px auto;
 }
 
 .info-container {
@@ -138,4 +149,5 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  background-color: bisque;
 }

@@ -5,7 +5,7 @@ export default function WordList(props) {
   return (
     <div className="display-words">
       {wordList.map(word => {
-        return <p>{word}</p>
+        return <p className="word">{word}</p>
       })}
     </div>
   )
