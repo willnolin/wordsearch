@@ -2,7 +2,7 @@ import './App.css';
 import Board from './components/board_components/Board';
 
 import Display from './components/display_components/Display';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Layout from './components/layout_components/Layout';
 
 
@@ -12,9 +12,15 @@ function App() {
   const [wordList, setWordList] = useState([]);
   const [activeSquares, setActiveSquares] = useState([]);
   const [isBoardActive, setIsBoardActive] = useState(false);
+  const [isTimerActive, setIsTimerActive] = useState(false);
+
+  useEffect(() => {
+    setIsTimerActive(prevState => !prevState)
+}, [])
+
   return (
     <div className="App">
-      <Layout>
+      <Layout isTimerActive={isTimerActive} setIsTimerActive={setIsTimerActive}>
         <div className="board-container">
           <Board
             currentWord={currentWord}

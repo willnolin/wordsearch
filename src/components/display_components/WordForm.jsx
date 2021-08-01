@@ -48,20 +48,6 @@ export default function WordForm(props) {
     setScore(prevState => prevState + points)
   }
 
-  // const handleClear = () => {
-  //   // clear current word state
-  //   setCurrentWord([])
-  //  // for each active square, change bg property to white, set global Active Board toggle (triggers useEffect in Square)
-  //   activeSquares.forEach(square => {
-  //     const obj = { bg: 'white' }
-  //     const newObj = Object.assign(square, obj)
-  //     square = { ...newObj }
-
-  //   })
-  //   setIsBoardActive(prevState => !prevState)
-  //   setActiveSquares([])
-  // }
-
   return (
     <div className="word-form">
       <form onSubmit={(e) => handleGuess(e)} id="word-form">
