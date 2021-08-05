@@ -5,19 +5,19 @@ import Timer from '../display_components/Timer'
 
 export default function Layout(props) {
   const [show, setShow] = useState('none')
-  const { isTimerActive, setIsTimerActive } = props;
+  const { isTimerActive, setIsTimerActive, handleClear, refreshPage } = props;
   return (
     <div className="layout-parent">
       <Header />
-      <Timer isTimerActive={isTimerActive} setIsTimerActive={setIsTimerActive} setShow={setShow}/>
+      <Timer isTimerActive={isTimerActive} setIsTimerActive={setIsTimerActive} setShow={setShow} handleClear={handleClear} refreshPage={refreshPage} />
       <div className="modal" style={{ display: show }}>
         <div className="message" >
-        <span className="close" onClick={() => {
-              setShow('none')
-            }}>{`close (x)`}</span>
-        <p>Congrats on completing the game!</p>
+          <span className="close" onClick={() => {
+            setShow('none')
+          }}>{`close (x)`}</span>
+          <p>Congrats on completing the game!</p>
         </div>
-        </div>
+      </div>
       <div className="layout-children">
         {props.children}
       </div>

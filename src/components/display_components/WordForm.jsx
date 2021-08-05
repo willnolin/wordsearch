@@ -2,16 +2,11 @@ import React, { useState } from 'react'
 
 export default function WordForm(props) {
   const { currentWord,
-    setCurrentWord,
     wordList,
     setWordList,
-    activeSquares,
-    setActiveSquares,
-    isBoardActive,
-    setIsBoardActive,
     setScore,
-  handleClear } = props;
-  
+    handleClear } = props;
+
   const currentWordStr = currentWord.join('')
   const words = require('an-array-of-english-words')
 
@@ -22,7 +17,7 @@ export default function WordForm(props) {
     else
       return false
   }
-
+  // this is where you need to handle if the word already exists in wordList
   const handleGuess = (e) => {
     e.preventDefault();
     const exists = checkIfValid(currentWordStr)
@@ -51,7 +46,6 @@ export default function WordForm(props) {
   return (
     <div className="word-form">
       <form onSubmit={(e) => handleGuess(e)} id="word-form">
-        {/* <button type="submit">Submit</button> */}
         <input className="textbox" type="text" id="word" value={currentWordStr} readOnly />
       </form>
     </div>

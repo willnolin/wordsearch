@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 export default function Square(props) {
   // const { letter, index, row, handleClick } = props;
-  const { letter, index, handleClick, isBoardActive, setIsBoardActive} = props;
+  const { letter, index, handleClick, isBoardActive, setIsBoardActive } = props;
   const [isActive, setIsActive] = useState(false);
   const [color, setColor] = useState('white')
 
@@ -15,6 +15,7 @@ export default function Square(props) {
     }
     changeColor();
   }, [isBoardActive])
+
   // if the square is a valid choice, change background color
   const handleSquare = () => {
     // setIsClicked(true);
@@ -23,24 +24,24 @@ export default function Square(props) {
       if (change) {
         letter.bg = 'white'
         setColor(letter.bg)
-       
+
       }
       else {
         letter.bg = 'red'
         setColor(letter.bg)
-        
+
       }
     }
     else {
       if (change) {
         letter.bg = 'red'
         setColor(letter.bg)
-     
+
       }
       else {
         letter.bg = 'white'
         setColor('white')
-     
+
       }
     }
   }
