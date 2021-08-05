@@ -17,10 +17,11 @@ export default function Timer(props) {
           if (minutes === 0) {
             clearInterval(interval);
             setIsTimerActive(false);
-            setShow('block')
+            setShow('block');
+            handleClear();
           } else {
-            setMinutes(minutes => minutes - 1)
-            setSeconds(59)
+            setMinutes(minutes => minutes - 1);
+            setSeconds(59);
           }
         }
       }, 1000)

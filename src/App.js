@@ -2,7 +2,7 @@ import './App.css';
 import Board from './components/board_components/Board';
 
 import Display from './components/display_components/Display';
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Layout from './components/layout_components/Layout';
 
 
@@ -40,14 +40,20 @@ function App() {
         handleClear={handleClear}
         refreshPage={refreshPage}>
         <div className="board-container">
-          <Board
-            currentWord={currentWord}
-            setCurrentWord={setCurrentWord}
-            activeSquares={activeSquares}
-            setActiveSquares={setActiveSquares}
-            isBoardActive={isBoardActive}
-            setIsBoardActive={setIsBoardActive}
-          />
+          {isTimerActive ?
+            <Board
+              currentWord={currentWord}
+              setCurrentWord={setCurrentWord}
+              activeSquares={activeSquares}
+              setActiveSquares={setActiveSquares}
+              isBoardActive={isBoardActive}
+              setIsBoardActive={setIsBoardActive}
+            /> :
+            <div className="inactive-board">
+              <p> Click "Start Timer" To Begin...</p>
+
+            </div>
+          }
         </div>
         <div className="submit-button-container">
           <button className="submit-button" form="word-form">Submit</button>

@@ -14,8 +14,9 @@ export default function Layout(props) {
         <div className="message" >
           <span className="close" onClick={() => {
             setShow('none')
+            refreshPage()
           }}>{`close (x)`}</span>
-          <p>Congrats on completing the game!</p>
+          <p>Times up! </p>
         </div>
       </div>
       <div className="layout-children">

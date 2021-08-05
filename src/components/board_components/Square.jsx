@@ -51,7 +51,6 @@ export default function Square(props) {
       style={{ backgroundColor: color }}
       onClick={() => handleSquare()}>
       <p className="letter">{`${letter.value}`}</p>
-      {/* <p className="letter">{`${letter.x}, ${letter.y}`}</p> */}
     </div>
   )
 }
