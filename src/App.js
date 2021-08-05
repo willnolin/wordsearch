@@ -28,9 +28,7 @@ function App() {
     setIsBoardActive(prevState => !prevState)
     setActiveSquares([])
   }
-  //   useEffect(() => {
-  //     setIsTimerActive(prevState => !prevState)
-  // }, [])
+
   function refreshPage() {
     window.location.reload(true);
   }

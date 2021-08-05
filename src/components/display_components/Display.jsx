@@ -13,11 +13,6 @@ export default function Display(props) {
 
   return (
     <div className="display-section">
-      {/* <div className="submit-button-container">
-        <button className="submit-button" form="word-form">Submit</button>
-
-        <button className="reset-button" onClick={handleClear}>Reset</button>
-      </div> */}
 
       <div className="display-details-column">
         <div className="score-textbox-row">
