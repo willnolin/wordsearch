@@ -50,8 +50,10 @@ function App() {
               setIsBoardActive={setIsBoardActive}
             /> :
             <div className="inactive-board">
-              <p> Click "Start Timer" To Begin...</p>
-
+              <div className="inactive-board-text">
+                <p> You Have 5 Minutes To Find As Many Words As You Can............</p>
+                <p>Click "Start Timer" To Begin</p>
+              </div>
             </div>
           }
         </div>

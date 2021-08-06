@@ -39,18 +39,20 @@ export default function Timer(props) {
 
   return (
     <div className="timer">
-      <h5> Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h5>
+      <h5 className="time-remaining"> Time Remaining:&nbsp; &nbsp;  <span className="clock">{minutes}:{seconds < 10 ? `0${seconds}` : seconds}</span></h5>
       {isTimerActive ?
-        <button onClick={() => {
-          handleClear();
-          resetTimer();
-          refreshPage();
-        }}> New Game</button>
+        <button className="timer-btn"
+          onClick={() => {
+            handleClear();
+            resetTimer();
+            refreshPage();
+          }}> New Game</button>
         :
-        <button onClick={() => {
-          handleClear();
-          setIsTimerActive(true)
-        }}>Start Timer</button>
+        <button className="timer-btn"
+          onClick={() => {
+            handleClear();
+            setIsTimerActive(true)
+          }}>Start Timer</button>
       }
     </div>
   )
