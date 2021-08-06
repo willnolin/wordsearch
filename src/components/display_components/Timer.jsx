@@ -29,7 +29,7 @@ export default function Timer(props) {
       clearInterval(interval)
     }
     return () => clearInterval(interval)
-
+    // eslint-disable-next-line
   }, [isTimerActive, seconds])
 
   const resetTimer = () => {

@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function WordList(props) {
-  const { wordList, setWordList } = props;
+  const { wordList } = props;
   return (
     <div className="display-words">
       {wordList.map(word => {

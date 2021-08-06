@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 export default function WordForm(props) {
   const { currentWord,
-    setCurrentWord,
     wordList,
     setWordList,
     setScore,

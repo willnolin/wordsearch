@@ -5,7 +5,7 @@ export default function RandomLetterRow(props) {
   const [randomLetterRow, setRandomLetterRow] = useState([]);
 
   const { handleClick, row, isBoardActive,
-  setIsBoardActive} = props;
+    setIsBoardActive } = props;
   const rows = 9;
 
   // generates a random letter
@@ -31,6 +31,7 @@ export default function RandomLetterRow(props) {
       setRandomLetterRow(rowArray)
     }
     generateLetterRow(rows)
+    // eslint-disable-next-line
   }, [])
 
   return (
@@ -42,7 +43,7 @@ export default function RandomLetterRow(props) {
             index={index}
             handleClick={handleClick}
             isBoardActive={isBoardActive}
-            setIsBoardActive={setIsBoardActive}/>
+            setIsBoardActive={setIsBoardActive} />
         ))}
       </div>
     </div>

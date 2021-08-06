@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 export default function Square(props) {
   // const { letter, index, row, handleClick } = props;
-  const { letter, index, handleClick, isBoardActive, setIsBoardActive } = props;
+  const { letter, index, handleClick, isBoardActive } = props;
   const [isActive, setIsActive] = useState(false);
   const [color, setColor] = useState('white')
 
@@ -14,6 +14,7 @@ export default function Square(props) {
       setIsActive(false);
     }
     changeColor();
+    // eslint-disable-next-line
   }, [isBoardActive])
 
   // if the square is a valid choice, change background color
