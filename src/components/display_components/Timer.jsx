@@ -43,15 +43,19 @@ export default function Timer(props) {
       {isTimerActive ?
         <button className="timer-btn"
           onClick={() => {
-            handleClear();
-            resetTimer();
-            refreshPage();
+            if (window.confirm("Are you sure you want to quit this game?")) {
+              handleClear();
+              resetTimer();
+              refreshPage();
+            }
           }}> New Game</button>
         :
         <button className="timer-btn"
           onClick={() => {
-            handleClear();
-            setIsTimerActive(true)
+           
+              handleClear();
+              setIsTimerActive(true)
+        
           }}>Start Timer</button>
       }
     </div>
