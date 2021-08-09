@@ -52,7 +52,7 @@ export default function WordForm(props) {
 
   const handleScore = () => {
     let points = 0;
-    if (currentWordStr.length < 6) {
+    if (currentWordStr.length < 5) {
       points = currentWordStr.length
     } else {
       points = currentWordStr.length + 3
