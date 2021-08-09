@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 export default function Timer(props) {
   const [seconds, setSeconds] = useState(0)
-  const [minutes, setMinutes] = useState(5)
+  const [minutes, setMinutes] = useState(3)
   const { isTimerActive, setIsTimerActive, setShow, handleClear, refreshPage } = props;
 
   useEffect(() => {

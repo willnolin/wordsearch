@@ -13,7 +13,7 @@ function App() {
   const [activeSquares, setActiveSquares] = useState([]);
   const [isBoardActive, setIsBoardActive] = useState(false);
   const [isTimerActive, setIsTimerActive] = useState(false);
-
+  const [score, setScore] = useState(0)
 
   const handleClear = () => {
     // clear current word state
@@ -38,7 +38,9 @@ function App() {
       <Layout isTimerActive={isTimerActive}
         setIsTimerActive={setIsTimerActive}
         handleClear={handleClear}
-        refreshPage={refreshPage}>
+        refreshPage={refreshPage}
+        score={score}
+      >
         <div className="board-container">
           {isTimerActive ?
             <Board
@@ -51,7 +53,7 @@ function App() {
             /> :
             <div className="inactive-board">
               <div className="inactive-board-text">
-                <p> You Have 5 Minutes To Find As Many Words As You Can............</p>
+                <p> You Have 3 Minutes To Find As Many Words As You Can............</p>
                 <p>Click "Start Timer" To Begin</p>
               </div>
             </div>
@@ -73,6 +75,8 @@ function App() {
             isBoardActive={isBoardActive}
             setIsBoardActive={setIsBoardActive}
             handleClear={handleClear}
+            score={score}
+            setScore={setScore}
           />
         </div>
       </Layout>

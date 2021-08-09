@@ -6,7 +6,7 @@ export default function RandomLetterRow(props) {
 
   const { handleClick, row, isBoardActive,
     setIsBoardActive } = props;
-  const rows = 9;
+  const rows = 6;
 
   // generates a random letter
   const generateRandomLetter = () => {

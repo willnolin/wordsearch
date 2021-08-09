@@ -5,24 +5,42 @@ import Timer from '../display_components/Timer'
 
 export default function Layout(props) {
   const [show, setShow] = useState('none')
-  const { isTimerActive, setIsTimerActive, handleClear, refreshPage } = props;
+  
+  const { isTimerActive,
+    setIsTimerActive,
+    handleClear,
+    refreshPage,
+    score
+  } = props;
+
   return (
     <div className="layout-parent">
+      
       <Header />
-      <Timer isTimerActive={isTimerActive} setIsTimerActive={setIsTimerActive} setShow={setShow} handleClear={handleClear} refreshPage={refreshPage} />
+      
+      <Timer isTimerActive={isTimerActive}
+        setIsTimerActive={setIsTimerActive}
+        setShow={setShow}
+        handleClear={handleClear}
+        refreshPage={refreshPage}
+      />
+
       <div className="modal" style={{ display: show }}>
         <div className="message" >
           <span className="close" onClick={() => {
             setShow('none')
             refreshPage()
           }}>{`close (x)`}</span>
-          <p>Times up! </p>
+          <p>Times up!  Score: {score}</p>
         </div>
       </div>
+      
       <div className="layout-children">
         {props.children}
       </div>
+      
       <Footer />
+    
     </div>
   )
 }

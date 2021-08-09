@@ -60,12 +60,12 @@ export default function Board(props) {
           setIsBoardActive={setIsBoardActive} />
         <RandomLetterRow handleClick={handleClick} row={5} isBoardActive={isBoardActive}
           setIsBoardActive={setIsBoardActive} />
-        <RandomLetterRow handleClick={handleClick} row={6} isBoardActive={isBoardActive}
+        {/* <RandomLetterRow handleClick={handleClick} row={6} isBoardActive={isBoardActive}
           setIsBoardActive={setIsBoardActive} />
         <RandomLetterRow handleClick={handleClick} row={7} isBoardActive={isBoardActive}
           setIsBoardActive={setIsBoardActive} />
         <RandomLetterRow handleClick={handleClick} row={8} isBoardActive={isBoardActive}
-          setIsBoardActive={setIsBoardActive} />
+          setIsBoardActive={setIsBoardActive} /> */}
       </div>
     </div>
   )

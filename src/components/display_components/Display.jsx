@@ -6,10 +6,14 @@ import WordList from './WordList';
 
 export default function Display(props) {
 
-  const { currentWord, setCurrentWord, wordList, setWordList, activeSquares,
-    setActiveSquares, isActive, setIsActive, isBoardActive, setIsBoardActive, handleClear } = props;
+  const { currentWord, setCurrentWord,
+    wordList, setWordList,
+    activeSquares, setActiveSquares,
+    isActive, setIsActive,
+    isBoardActive, setIsBoardActive,
+    handleClear, score, setScore } = props;
 
-  const [score, setScore] = useState(0)
+  // const [score, setScore] = useState(0)
 
   return (
     <div className="display-section">

@@ -13,7 +13,7 @@ export default function WordForm(props) {
 
   const checkIfValid = (word) => {
     const w = word.toLowerCase()
-    if (words.filter(d => d === w).length && !wordList.includes(w.toUpperCase()) && w.length > 5) {
+    if (words.filter(d => d === w).length && !wordList.includes(w.toUpperCase()) && w.length > 4) {
       setMessage('Long Word Bonus +3 !')
       return true
     } else if (words.filter(d => d === w).length && !wordList.includes(w.toUpperCase())) {
