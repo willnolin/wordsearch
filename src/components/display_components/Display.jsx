@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Info from './Info';
 import WordForm from './WordForm';
 import WordList from './WordList';
