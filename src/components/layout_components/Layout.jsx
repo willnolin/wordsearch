@@ -30,7 +30,9 @@ export default function Layout(props) {
           <span className="close" onClick={() => {
             setShow('none')
             refreshPage()
-          }}>{`close (x)`}</span>
+            }}>
+              {`close (x)`}
+          </span>
           <p>Times up!  Score: {score}</p>
         </div>
       </div>

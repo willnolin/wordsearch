@@ -9,8 +9,7 @@ export default function Board(props) {
 
 
   const handleClick = (letter, setIsActive) => {
-    // setIsBoardActive(true);
-
+ 
     if (currentWord.length) {
       if (activeSquares.find((obj) => (
         obj.x === letter.x && obj.y === letter.y
@@ -21,9 +20,9 @@ export default function Board(props) {
           currentWord.splice(currentWord.length - 1, 1);
           setCurrentWord([...currentWord])
           setIsActive(false);
-          return true;  // Change
+          return true;  // detect Change
         } else {
-          return false;  // Change
+          return false;  // detect Change
         }
       }
       if ((Math.abs(letter.x - activeSquares[activeSquares.length - 1].x) < 2 &&
@@ -33,9 +32,7 @@ export default function Board(props) {
         setIsActive(true);
         return true
       }
-
     } else {
-      // setIsBoardActive(true);
       setActiveSquares([letter])
       setCurrentWord([letter.value])
       setIsActive(true)
@@ -60,12 +57,6 @@ export default function Board(props) {
           setIsBoardActive={setIsBoardActive} />
         <RandomLetterRow handleClick={handleClick} row={5} isBoardActive={isBoardActive}
           setIsBoardActive={setIsBoardActive} />
-        {/* <RandomLetterRow handleClick={handleClick} row={6} isBoardActive={isBoardActive}
-          setIsBoardActive={setIsBoardActive} />
-        <RandomLetterRow handleClick={handleClick} row={7} isBoardActive={isBoardActive}
-          setIsBoardActive={setIsBoardActive} />
-        <RandomLetterRow handleClick={handleClick} row={8} isBoardActive={isBoardActive}
-          setIsBoardActive={setIsBoardActive} /> */}
       </div>
     </div>
   )

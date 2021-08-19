@@ -26,7 +26,7 @@ export default function WordForm(props) {
       return false
     }
   }
-  // this is where you need to handle if the word already exists in wordList
+
   const handleGuess = (e) => {
     e.preventDefault();
     const exists = checkIfValid(currentWordStr)
