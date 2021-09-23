@@ -14,6 +14,7 @@ function App() {
   const [isBoardActive, setIsBoardActive] = useState(false);
   const [isTimerActive, setIsTimerActive] = useState(false);
   const [score, setScore] = useState(0)
+  const [inProp, setInProp] = useState(false);
 
   const handleClear = () => {
     // clear current word state
@@ -27,10 +28,12 @@ function App() {
     })
     setIsBoardActive(prevState => !prevState)
     setActiveSquares([])
+   
   }
 
   function refreshPage() {
-    window.location.reload(true);
+    setScore(0)
+    setWordList([])
   }
 
   return (
@@ -40,6 +43,7 @@ function App() {
         handleClear={handleClear}
         refreshPage={refreshPage}
         score={score}
+        setInProp={setInProp}
       >
         <div className="board-container">
           {isTimerActive ?
@@ -50,6 +54,8 @@ function App() {
               setActiveSquares={setActiveSquares}
               isBoardActive={isBoardActive}
               setIsBoardActive={setIsBoardActive}
+              inProp={inProp}
+              setInProp={setInProp}
             /> :
             <div className="inactive-board">
               <div className="inactive-board-text">

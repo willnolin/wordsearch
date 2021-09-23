@@ -1,12 +1,14 @@
-import React from 'react'
-
-import RandomLetterRow from './RandomLetterRow'
+import React, { useState, useEffect } from 'react';
+import { CSSTransition } from 'react-transition-group';
+import RandomLetterRow from './RandomLetterRow';
 
 export default function Board(props) {
-
+  // const [inProp, setInProp] = useState(false);
   const { currentWord, setCurrentWord, activeSquares, setActiveSquares, isBoardActive,
-    setIsBoardActive } = props;
-
+    setIsBoardActive, inProp, setInProp } = props;
+  useEffect(() => {
+  setInProp(true)
+}, [])
 
   const handleClick = (letter, setIsActive) => {
  
@@ -44,6 +46,7 @@ export default function Board(props) {
 
   return (
     <div>
+      <CSSTransition in={inProp} timeout={2000} classNames="fade" unmountOnExit>
       <div className="board">
         <RandomLetterRow handleClick={handleClick} row={0} isBoardActive={isBoardActive}
           setIsBoardActive={setIsBoardActive} />
@@ -58,6 +61,7 @@ export default function Board(props) {
         <RandomLetterRow handleClick={handleClick} row={5} isBoardActive={isBoardActive}
           setIsBoardActive={setIsBoardActive} />
       </div>
+      </CSSTransition>
     </div>
   )
 }
