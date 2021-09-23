@@ -38,14 +38,14 @@ export default function Timer(props) {
   }
 
   return (
-    <div className="timer">
-      <h5 className="time-remaining"> Time Remaining:&nbsp; &nbsp;
+    <div className="section is-small timer">
+      <h5 className="content mt-5 has-text-black time-remaining"> Time Remaining:&nbsp; &nbsp;
         <span className="clock">
           {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
         </span>
       </h5>
       {isTimerActive ?
-        <button className="timer-btn"
+        <button className="button is-outlined is-small timer-btn"
           onClick={() => {
             if (window.confirm("Are you sure you want to quit this game?")) {
               handleClear();
@@ -54,7 +54,7 @@ export default function Timer(props) {
             }
           }}> New Game</button>
         :
-        <button className="timer-btn"
+        <button className="button is-outlined is-black is-small timer-btn"
           onClick={() => {
            
               handleClear();
