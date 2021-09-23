@@ -10,7 +10,8 @@ export default function Layout(props) {
     setIsTimerActive,
     handleClear,
     refreshPage,
-    score
+    score,
+    setInProp
   } = props;
 
   return (
@@ -23,6 +24,7 @@ export default function Layout(props) {
         setShow={setShow}
         handleClear={handleClear}
         refreshPage={refreshPage}
+        setInProp={setInProp}
       />
 
       <div className="modal" style={{ display: show }}>

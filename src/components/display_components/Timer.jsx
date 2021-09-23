@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 export default function Timer(props) {
   const [seconds, setSeconds] = useState(0)
   const [minutes, setMinutes] = useState(3)
-  const { isTimerActive, setIsTimerActive, setShow, handleClear, refreshPage } = props;
+  const { isTimerActive, setIsTimerActive, setShow, handleClear, refreshPage, setInProp } = props;
 
   useEffect(() => {
     let interval = null;
@@ -50,6 +50,7 @@ export default function Timer(props) {
             if (window.confirm("Are you sure you want to quit this game?")) {
               handleClear();
               resetTimer();
+              setInProp(false);
               refreshPage();
             }
           }}> New Game</button>
