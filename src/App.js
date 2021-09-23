@@ -28,10 +28,12 @@ function App() {
     })
     setIsBoardActive(prevState => !prevState)
     setActiveSquares([])
+   
   }
 
   function refreshPage() {
-    window.location.reload(true);
+    setScore(0)
+    setWordList([])
   }
 
   return (

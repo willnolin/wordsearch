@@ -33,8 +33,9 @@ export default function Timer(props) {
   }, [isTimerActive, seconds])
 
   const resetTimer = () => {
-    setMinutes(5);
+    setMinutes(3);
     setSeconds(0);
+    setIsTimerActive(false);
   }
 
   return (
