@@ -25,9 +25,8 @@ export default function Display(props) {
   return (
     <div className="display-section">
 
-      <div className="display-details-column">
-        <div className="score-textbox-row">
-          <Info score={score} />
+      <div className="container m-0 display-details-column">
+        <div className="content m-2 has-text-centered">
           <WordForm
             currentWord={currentWord}
             setCurrentWord={setCurrentWord}
@@ -42,6 +41,7 @@ export default function Display(props) {
             setScore={setScore}
             handleClear={handleClear}
           />
+          <Info score={score} />
         </div>
         <WordList
           wordList={wordList}

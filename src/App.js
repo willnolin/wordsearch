@@ -53,8 +53,8 @@ function App() {
             /> :
             <div className="inactive-board">
               <div className="inactive-board-text">
-                <p> You Have 3 Minutes To Find As Many Words As You Can............</p>
-                <p>Click "Start Timer" To Begin</p>
+                <p className="directions"> You Have 3 Minutes To Find As Many Words As You Can............</p>
+                <p className="directions">Click "Start Timer" To Begin</p>
               </div>
             </div>
           }
@@ -64,7 +64,7 @@ function App() {
 
           <button className="reset-button" onClick={handleClear}>Reset</button>
         </div>
-        <div className="game-details-container">
+        <div className="container game-details-container">
           <Display
             currentWord={currentWord}
             setCurrentWord={setCurrentWord}
