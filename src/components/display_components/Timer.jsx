@@ -16,7 +16,8 @@ export default function Timer(props) {
         if (seconds === 0) {
           if (minutes === 0) {
             clearInterval(interval);
-            setIsTimerActive(false);
+            // setIsTimerActive(false);
+            resetTimer();
             setShow('block');
             handleClear();
           } else {
