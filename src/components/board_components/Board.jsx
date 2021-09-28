@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import RandomLetterRow from './RandomLetterRow';
 
 export default function Board(props) {
-  // const [inProp, setInProp] = useState(false);
   const { currentWord, setCurrentWord, activeSquares, setActiveSquares, isBoardActive,
     setIsBoardActive, inProp, setInProp } = props;
   useEffect(() => {
@@ -16,7 +15,8 @@ export default function Board(props) {
       if (activeSquares.find((obj) => (
         obj.x === letter.x && obj.y === letter.y
       ))) {
-        if (activeSquares[activeSquares.length - 1].x === letter.x && activeSquares[activeSquares.length - 1].y === letter.y) {
+        if (activeSquares[activeSquares.length - 1].x === letter.x &&
+          activeSquares[activeSquares.length - 1].y === letter.y) {
           activeSquares.splice(activeSquares.length - 1, 1)
           setActiveSquares([...activeSquares])
           currentWord.splice(currentWord.length - 1, 1);
